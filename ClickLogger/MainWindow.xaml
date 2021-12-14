@@ -5,9 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClickLogger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="gridOut">
-
-
+        Title="MainWindow" Height="450" Width="800"
+        MouseMove="Window_MouseMove"
+        MouseDown="Window_MouseDown"
+        MouseUp="Window_MouseUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"  Grid.Row="0" Grid.Column="0">
+            <Button x:Name="btnClear" Content="Clear" Width="50" Click="btnClear_Click"></Button>
+            <Button x:Name="btnFill" Content="Fill" Width="50"  Click="btnFill_Click"></Button>
+            <Button x:Name="btnRandomBack" Content="Random" Width="50"  Click="btnRandomBack_Click"></Button>
+            <Frame Width="20" Height="20" Uid="255,0,0" Background="Red" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="0,0,255" Background="Blue" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="102,102,102" Background="Gray" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="0,0,0" Background="Black" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="0,255,0" Background="Green" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="255,255,255" Background="White" MouseDown="Frame_MouseDown"></Frame>
+            <Frame Width="20" Height="20" Uid="255,113,191" Background="Pink" MouseDown="Frame_MouseDown"></Frame>
+        </StackPanel>
+        <Grid x:Name="gridOut" Grid.Row="1" Grid.Column="0">
+        </Grid>
     </Grid>
 </Window>
